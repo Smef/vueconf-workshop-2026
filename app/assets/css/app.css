@@ -1,0 +1,9 @@
+@import "tailwindcss";
+@import "tailwindcss-primeui";
+@import "primeicons/primeicons.css";
+
+@variant dark (&:where(.dark, .dark *));
+
+@theme {
+    --default-transition-duration: 350ms;
+}

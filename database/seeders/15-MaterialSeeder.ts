@@ -1,0 +1,171 @@
+import type { Database } from "../../server/types/database";
+import type { Kysely } from "kysely";
+
+export async function seed(db: Kysely<Database>): Promise<void> {
+    await db
+        .insertInto("materials")
+        .values([
+            {
+                name: "Asphalt Shingles",
+                description: "Architectural-grade 30-year asphalt roofing shingles, charcoal.",
+                category: "Roofing",
+                unit: "bundle",
+                unit_cost: 38,
+            },
+            {
+                name: "Ridge Cap Shingles",
+                description: "Hip and ridge cap shingles for roof peaks.",
+                category: "Roofing",
+                unit: "bundle",
+                unit_cost: 55,
+            },
+            {
+                name: "Ready-Mix Concrete (3000 psi)",
+                description: "Standard 3000 psi ready-mix concrete, delivered by truck.",
+                category: "Concrete",
+                unit: "yd³",
+                unit_cost: 165,
+            },
+            {
+                name: 'Concrete Masonry Block (8")',
+                description: "Standard 8x8x16 gray CMU block.",
+                category: "Concrete",
+                unit: "pcs",
+                unit_cost: 3,
+            },
+            {
+                name: 'Rebar #4 (1/2")',
+                description: "Grade 60 reinforcing steel bar, 20 ft length.",
+                category: "Concrete",
+                unit: "pcs",
+                unit_cost: 9,
+            },
+            {
+                name: "Double-Pane Window Pane (36x48)",
+                description: "Insulated double-pane glass window, Low-E coated.",
+                category: "Windows & Doors",
+                unit: "pcs",
+                unit_cost: 285,
+            },
+            {
+                name: "Sliding Patio Door",
+                description: "6 ft vinyl sliding patio door with tempered glass.",
+                category: "Windows & Doors",
+                unit: "pcs",
+                unit_cost: 720,
+            },
+            {
+                name: "Vinyl Siding Panel",
+                description: "Horizontal vinyl siding panel, 12 ft, beige.",
+                category: "Siding",
+                unit: "panel",
+                unit_cost: 14,
+            },
+            {
+                name: "Fiber Cement Siding",
+                description: "James Hardie style fiber cement lap siding, primed.",
+                category: "Siding",
+                unit: "panel",
+                unit_cost: 32,
+            },
+            {
+                name: "2x4 Stud (8 ft)",
+                description: "Kiln-dried SPF framing stud, 2x4x8.",
+                category: "Lumber",
+                unit: "pcs",
+                unit_cost: 4,
+            },
+            {
+                name: "2x6 Stud (8 ft)",
+                description: "Kiln-dried SPF framing stud, 2x6x8.",
+                category: "Lumber",
+                unit: "pcs",
+                unit_cost: 7,
+            },
+            {
+                name: 'OSB Sheathing (7/16")',
+                description: "4x8 oriented strand board sheathing panel.",
+                category: "Lumber",
+                unit: "sheet",
+                unit_cost: 18,
+            },
+            {
+                name: 'Plywood (3/4")',
+                description: "4x8 CDX plywood sheet.",
+                category: "Lumber",
+                unit: "sheet",
+                unit_cost: 48,
+            },
+            {
+                name: 'Drywall (1/2")',
+                description: "4x8 gypsum drywall panel.",
+                category: "Interior",
+                unit: "sheet",
+                unit_cost: 14,
+            },
+            {
+                name: "Fiberglass Batt Insulation R-19",
+                description: "Kraft-faced fiberglass batt insulation, R-19, fits 2x6 walls.",
+                category: "Insulation",
+                unit: "bundle",
+                unit_cost: 52,
+            },
+            {
+                name: "Spray Foam Insulation Kit",
+                description: "Closed-cell two-component spray foam kit, 600 board ft.",
+                category: "Insulation",
+                unit: "kit",
+                unit_cost: 720,
+            },
+            {
+                name: 'PVC Pipe (4")',
+                description: "4 inch schedule 40 PVC drain pipe, 10 ft length.",
+                category: "Plumbing",
+                unit: "pcs",
+                unit_cost: 22,
+            },
+            {
+                name: 'Copper Pipe (1/2")',
+                description: "1/2 inch Type L copper water pipe, 10 ft length.",
+                category: "Plumbing",
+                unit: "pcs",
+                unit_cost: 34,
+            },
+            {
+                name: "Romex 12/2 Wire",
+                description: "12 gauge NM-B residential electrical cable, 250 ft roll.",
+                category: "Electrical",
+                unit: "roll",
+                unit_cost: 110,
+            },
+            {
+                name: "Interior Latex Paint",
+                description: "Premium interior latex paint, eggshell finish, white.",
+                category: "Finishes",
+                unit: "gallon",
+                unit_cost: 38,
+            },
+            {
+                name: "Ceramic Floor Tile (12x12)",
+                description: "Glazed ceramic floor tile, 12x12 inch.",
+                category: "Finishes",
+                unit: "ft²",
+                unit_cost: 2,
+            },
+            {
+                name: "Common Nails (16d)",
+                description: "16d common framing nails, 50 lb box.",
+                category: "Fasteners",
+                unit: "box",
+                unit_cost: 65,
+            },
+            {
+                name: 'Construction Screws (3")',
+                description: "3 inch exterior construction screws, 5 lb box.",
+                category: "Fasteners",
+                unit: "box",
+                unit_cost: 28,
+            },
+        ])
+        .execute();
+}

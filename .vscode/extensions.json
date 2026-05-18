@@ -1,0 +1,12 @@
+{
+    "recommendations": [
+        "mikestead.dotenv",
+        "antfu.goto-alias",
+        "dbaeumer.vscode-eslint",
+        "esbenp.prettier-vscode",
+        "bradlc.vscode-tailwindcss",
+        "Vue.volar",
+        "christian-kohler.npm-intellisense",
+        "yoavbls.pretty-ts-errors"
+    ]
+}
