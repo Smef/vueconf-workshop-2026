@@ -3,6 +3,19 @@ import { defineModel } from "vasta-orm";
 export class ProjectDailyReport extends defineModel({
     db,
     table: "project_daily_reports",
+    events: {
+        saving: async (model) => {
+            const dirty = model.getDirty();
+            if ("summary" in dirty) {
+                const embeddingResponse = await embedContent(model.attributes.summary, "RETRIEVAL_DOCUMENT");
+
+                const values = embeddingResponse.embeddings?.[0]?.values;
+                if (values) {
+                    model.assign({ summary_embedding: `[${values.toString()}]` });
+                }
+            }
+        },
+    },
 }) {
     get project() {
         return this.belongsTo(Project, "project_id");

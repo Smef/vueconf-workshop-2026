@@ -12,6 +12,7 @@ export async function up(db: Kysely<any>): Promise<void> {
         .addColumn("project_id", "integer", (col) => col.notNull().references("projects.id").onDelete("cascade"))
         .addColumn("report_date", "date", (col) => col.notNull())
         .addColumn("summary", "text", (col) => col.notNull())
+        .addColumn("summary_embedding", sql`vector(768)`)
         .addColumn("photo_file_name", "text")
         .execute();
 
@@ -20,6 +21,12 @@ export async function up(db: Kysely<any>): Promise<void> {
         .on("project_daily_reports")
         .columns(["project_id", "report_date"])
         .execute();
+
+    await sql`
+        CREATE INDEX project_daily_reports_summary_embedding_idx
+        ON project_daily_reports
+        USING hnsw (summary_embedding vector_cosine_ops)
+    `.execute(db);
 }
 
 export async function down(db: Kysely<any>): Promise<void> {

@@ -8,9 +8,20 @@ import Card from "primevue/card";
 import InputText from "primevue/inputtext";
 import { refDebounced } from "@vueuse/core";
 
-const search = ref("");
+const route = useRoute();
+const router = useRouter();
+
+const search = ref((route.query.q as string) || "");
 const debouncedSearch = refDebounced(search, 300);
 
+watch(debouncedSearch, (newVal) => {
+    router.replace({
+        query: {
+            ...route.query,
+            q: newVal || undefined,
+        },
+    });
+});
 const {
     data: projects,
     status,

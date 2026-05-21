@@ -478,7 +478,9 @@ onBeforeUnmount(() => {
                 </div>
 
                 <div>
-                    <label class="mb-1 block text-xs tracking-wide text-surface-500 uppercase">Photo (Optional)</label>
+                    <label class="mb-1 block text-xs tracking-wide text-surface-500 uppercase"
+                        >Photo of roofing shingle</label
+                    >
                     <div v-if="newReportPhoto" class="flex items-center gap-3 rounded-border border border-surface p-3">
                         <img
                             v-if="newReportPhotoPreview"
