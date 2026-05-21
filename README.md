@@ -6,6 +6,8 @@ This repository will be the base for the activities we'll be doing in class. It'
 
 Please clone this repository and follow the setup instructions here.
 
+Completed activites are available in the `complete` branch, which you can check out at any time to see the finished code for each activity from the workshop.
+
 ## Prerequisites:
 
 Please be sure to have the following apps and services configured and ready before the day of the workshop.
