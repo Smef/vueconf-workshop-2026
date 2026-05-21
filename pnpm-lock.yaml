@@ -54,8 +54,8 @@ importers:
         specifier: ^0.6.1
         version: 0.6.1(tailwindcss@4.3.0)
       vasta-orm:
-        specifier: ^0.0.13
-        version: 0.0.13(kysely@0.29.2)
+        specifier: ^0.0.14
+        version: 0.0.14(kysely@0.29.2)
       vue:
         specifier: ^3.5.34
         version: 3.5.34(typescript@6.0.3)
@@ -138,6 +138,7 @@ packages:
   '@aws-sdk/core@3.974.11':
     resolution: {integrity: sha512-QpnINq5FZH6EOaDEkmHdT7eUunbvD27pDNQypaWjFyYz7Zl1q3UCMQErBZxpmfGfI7MvI2TlK8KTkgNpv8b1ug==}
     engines: {node: '>=20.0.0'}
+    deprecated: Deprecated due to an error deserialization bug in JSON 1.0 protocol services, see https://github.com/aws/aws-sdk-js-v3/pull/8031. Newer version available.
 
   '@aws-sdk/crc64-nvme@3.972.8':
     resolution: {integrity: sha512-fVfUCL/Xh2zINYMPZvj+iBn6XWouQf0DAnjaWCI9MkmqXzL2Iy5FoQB8O7syFe6gN6AH1ecDDU58T51Ou0kFkA==}
@@ -4811,8 +4812,8 @@ packages:
   util-deprecate@1.0.2:
     resolution: {integrity: sha512-EPD5q1uXyFxJpCrLnCc1nHnq3gOa6DZBocAIiI2TaSCA7VCJ1UJDMagCzIkXNsUYfD1daK//LTEQ8xiIbrHtcw==}
 
-  vasta-orm@0.0.13:
-    resolution: {integrity: sha512-IfHil6JfEcNW8KM/8+kTat+1OkwaGiqA7SSkpIxwBd9bnnvCarerfk25Vz5FL2xAwYKZrBzpgtqqPbE4uyyr3A==}
+  vasta-orm@0.0.14:
+    resolution: {integrity: sha512-Z83YrtAo4sYOZAfOh1yAQiDWNsL+0uJo1Xb+UFdsAZs6nsYUNIGo+SSl9cpRAGuSMgTCxi0NughWSWcKrPjg0w==}
     peerDependencies:
       kysely: ^0.29.0
 
@@ -10084,7 +10085,7 @@ snapshots:
 
   util-deprecate@1.0.2: {}
 
-  vasta-orm@0.0.13(kysely@0.29.2):
+  vasta-orm@0.0.14(kysely@0.29.2):
     dependencies:
       kysely: 0.29.2
 
